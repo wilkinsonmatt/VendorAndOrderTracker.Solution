@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace ToDoList.Models
+namespace Tracker.Models
 {
   public class Vendor
   {
@@ -32,7 +32,7 @@ namespace ToDoList.Models
       return _instances[searchId-1];
     }
 
-    public void AddItem(Order order)
+    public void AddOrder(Order order)
     {
       Orders.Add(order);
     }
