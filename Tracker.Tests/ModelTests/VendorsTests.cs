@@ -103,23 +103,27 @@ namespace Tacker.Tests
       Assert.AreEqual(newVendor2, result);
     }
 
-    // [TestMethod]
-    // public void AddOrder_AssociatesItemWithVendor_ItemList()
-    // {
-    //   //Arrange
-    //   string description = "Walk the dog.";
-    //   Order newOrder = new Order(description);
-    //   List<Order> newList = new List<Order> { newOrder };
-    //   string name = "Work";
-    //   Vendor newVendor = new Vendor(name);
-    //   newVendor.AddOrder(newOrder);
+    [TestMethod]
+    public void AddOrder_AssociatesItemWithVendor_ItemList()
+    {
+      //Arrange
+      string orderDescription = "test description";
+      string price = "test price";
+      string date = "test date";
+      string title = "test title";
+      Order newOrder = new Order(orderDescription, price, date, title);
+      List<Order> newList = new List<Order> { newOrder };
 
-    //   //Act
-    //   List<Order> result = newVendor.Orders;
+      string name = "Test Vendor";
+      string vendorDescription = "Test Description";
+      Vendor newVendor = new Vendor(name, vendorDescription);
+      newVendor.AddOrder(newOrder);
 
-    //   //Assert
-    //   CollectionAssert.AreEqual(newList, result);
-    // }
-    
+      //Act
+      List<Order> result = newVendor.Orders;
+
+      //Assert
+      CollectionAssert.AreEqual(newList, result);
+    }
   }
 }
