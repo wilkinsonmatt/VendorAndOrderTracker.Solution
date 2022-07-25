@@ -2,7 +2,7 @@
 
 #### By Matt Wilkinson
 
-#### A simpl web application for a barkery to track their vendors and their vendor's orders.
+#### A simple web application for a barkery owner to track their vendors and their vendor's orders.
 
 ## Github links
 
