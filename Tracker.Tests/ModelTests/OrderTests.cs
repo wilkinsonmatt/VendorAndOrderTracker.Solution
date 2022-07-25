@@ -166,18 +166,18 @@ namespace Tracker.Tests
     }
 
 
-    // [TestMethod]
-    // public void GetAll_ReturnsEmptyList_OrderList()
-    // {
-    //   // Arrange
-    //   List<Order> newList = new List<Order> { };
+    [TestMethod]
+    public void GetAll_ReturnsEmptyList_OrderList()
+    {
+      // Arrange
+      List<Order> newList = new List<Order> { };
 
-    //   // Act
-    //   List<Order> result = Order.GetAll();
+      // Act
+      List<Order> result = Order.GetAll();
 
-    //   // Assert
-    //   CollectionAssert.AreEqual(newList, result);
-    // }
+      // Assert
+      CollectionAssert.AreEqual(newList, result);
+    }
 
     // [TestMethod]
     // public void GetAll_ReturnsOrders_OrderList()
