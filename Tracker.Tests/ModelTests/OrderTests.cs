@@ -89,25 +89,24 @@ namespace Tracker.Tests
       Assert.AreEqual(title, result);
     } 
 
+    [TestMethod]
+    public void SetDescription_SetDescription_String()
+    {
+      //Arrange
+      string description = "test description";
+      string price = "test price";
+      string date = "test date";
+      string title = "test title";
+      Order newOrder = new Order(description, price, date, title);
 
+      //Act
+      string updatedDescription = "Update this description";
+      newOrder.Description = updatedDescription;
+      string result = newOrder.Description;
 
-
-
-    // [TestMethod]
-    // public void SetDescription_SetDescription_String()
-    // {
-    //   //Arrange
-    //   string description = "Walk the dog.";
-    //   Order newOrder = new Order(description);
-
-    //   //Act
-    //   string updatedDescription = "Do the dishes";
-    //   newOrder.Description = updatedDescription;
-    //   string result = newOrder.Description;
-
-    //   //Assert
-    //   Assert.AreEqual(updatedDescription, result);
-    // }
+      //Assert
+      Assert.AreEqual(updatedDescription, result);
+    }
 
     // [TestMethod]
     // public void GetAll_ReturnsEmptyList_OrderList()
