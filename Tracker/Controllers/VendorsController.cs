@@ -8,7 +8,7 @@ namespace Tracker.Controllers
   public class VendorsController : Controller
   {
 
-    [HttpGet("/Vendors")]
+    [HttpGet("/vendors")]
     public ActionResult Index()
     {
       List<Vendor> allVendors = Vendor.GetAll();
@@ -34,7 +34,7 @@ namespace Tracker.Controllers
       Dictionary<string, object> model = new Dictionary<string, object>();
       Vendor selectedVendor = Vendor.Find(id);
       List<Order> vendorOrders = selectedVendor.Orders;
-      model.Add("Vendor", selectedVendor);
+      model.Add("vendor", selectedVendor);
       model.Add("orders", vendorOrders);
       return View(model);
     }
