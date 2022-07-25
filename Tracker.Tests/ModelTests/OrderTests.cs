@@ -127,6 +127,26 @@ namespace Tracker.Tests
       Assert.AreEqual(updatedPrice, result);
     }
 
+    [TestMethod]
+    public void SetDate_SetDate_String()
+    {
+      //Arrange
+      string description = "test description";
+      string price = "test price";
+      string date = "test date";
+      string title = "test title";
+      Order newOrder = new Order(description, price, date, title);
+
+      //Act
+      string updatedDate = "Update this description";
+      newOrder.Date = updatedDate;
+      string result = newOrder.Date;
+
+      //Assert
+      Assert.AreEqual(updatedDate, result);
+    }
+
+
     // [TestMethod]
     // public void GetAll_ReturnsEmptyList_OrderList()
     // {
