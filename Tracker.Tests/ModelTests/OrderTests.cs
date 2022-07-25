@@ -165,7 +165,6 @@ namespace Tracker.Tests
       Assert.AreEqual(updatedTitle, result);
     }
 
-
     [TestMethod]
     public void GetAll_ReturnsEmptyList_OrderList()
     {
@@ -179,21 +178,28 @@ namespace Tracker.Tests
       CollectionAssert.AreEqual(newList, result);
     }
 
-    // [TestMethod]
-    // public void GetAll_ReturnsOrders_OrderList()
-    // {
-    //   //Arrange
-    //   string description01 = "Walk the dog";
-    //   string description02 = "Wash the dishes";
-    //   Order newOrder1 = new Order(description01);
-    //   Order newOrder2 = new Order(description02);
-    //   List<Order> newList = new List<Order> { newOrder1, newOrder2 };
+    [TestMethod]
+    public void GetAll_ReturnsOrders_OrderList()
+    {
+      //Arrange
+      string description1 = "test description 1";
+      string price1 = "test price 1";
+      string date1 = "test date 1";
+      string title1 = "test title 1";
+      Order newOrder1 = new Order(description1, price1, date1, title1);
+      string description2 = "test description 2";
+      string price2 = "test price 2";
+      string date2 = "test date 2";
+      string title2 = "test title 2";
+      Order newOrder2 = new Order(description2, price2, date2, title2);
+      List<Order> newList = new List<Order> { newOrder1, newOrder2 };
 
-    //   //Act
-    //   List<Order> result = Order.GetAll();
+      //Act
+      List<Order> result = Order.GetAll();
 
-    //   //Assert
-    //   CollectionAssert.AreEqual(newList, result);
-    // }
+      //Assert
+      CollectionAssert.AreEqual(newList, result);
+    }
+    
   }
 }
