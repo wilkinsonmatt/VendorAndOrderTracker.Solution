@@ -119,7 +119,7 @@ namespace Tracker.Tests
       Order newOrder = new Order(description, price, date, title);
 
       //Act
-      string updatedPrice = "Update this description";
+      string updatedPrice = "Update this price";
       newOrder.Price = updatedPrice;
       string result = newOrder.Price;
 
@@ -138,12 +138,31 @@ namespace Tracker.Tests
       Order newOrder = new Order(description, price, date, title);
 
       //Act
-      string updatedDate = "Update this description";
+      string updatedDate = "Update this date";
       newOrder.Date = updatedDate;
       string result = newOrder.Date;
 
       //Assert
       Assert.AreEqual(updatedDate, result);
+    }
+
+    [TestMethod]
+    public void SetTitle_SetTitle_String()
+    {
+      //Arrange
+      string description = "test description";
+      string price = "test price";
+      string date = "test date";
+      string title = "test title";
+      Order newOrder = new Order(description, price, date, title);
+
+      //Act
+      string updatedTitle = "Update this title";
+      newOrder.Title = updatedTitle;
+      string result = newOrder.Title;
+
+      //Assert
+      Assert.AreEqual(updatedTitle, result);
     }
 
 
