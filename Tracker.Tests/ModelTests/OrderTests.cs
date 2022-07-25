@@ -55,6 +55,24 @@ namespace Tracker.Tests
       Assert.AreEqual(price, result);
     }
 
+    [TestMethod]
+    public void GetDate_ReturnsDate_String()
+    {
+      //Arrange
+      string description = "test description";
+      string price = "test price";
+      string date = "test date";
+      string title = "test title";
+
+      //Act
+      Order newOrder = new Order(description, price, date, title);
+      string result = newOrder.Date;
+
+      //Assert
+      Assert.AreEqual(date, result);
+    }  
+
+
 
 
 
