@@ -17,7 +17,7 @@ namespace Tracker.Tests
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
     {
-      Order newOrder = new Order("test");
+      Order newOrder = new Order("description", "string price", "string date", "string title");
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
 
@@ -25,10 +25,13 @@ namespace Tracker.Tests
     public void GetDescription_ReturnsDescription_String()
     {
       //Arrange
-      string description = "Walk the dog.";
+      string description = "test description";
+      string price = "test price";
+      string date = "test date";
+      string title = "test title";
 
       //Act
-      Order newOrder = new Order(description);
+      Order newOrder = new Order(description, price, date, title);
       string result = newOrder.Description;
 
       //Assert
@@ -36,49 +39,69 @@ namespace Tracker.Tests
     }
 
     [TestMethod]
-    public void SetDescription_SetDescription_String()
+    public void GetPrice_ReturnsPrice_String()
     {
       //Arrange
-      string description = "Walk the dog.";
-      Order newOrder = new Order(description);
+      string description = "test description";
+      string price = "test price";
+      string date = "test date";
+      string title = "test title";
 
       //Act
-      string updatedDescription = "Do the dishes";
-      newOrder.Description = updatedDescription;
-      string result = newOrder.Description;
+      Order newOrder = new Order(description, price, date, title);
+      string result = newOrder.Price;
 
       //Assert
-      Assert.AreEqual(updatedDescription, result);
+      Assert.AreEqual(price, result);
     }
 
-    [TestMethod]
-    public void GetAll_ReturnsEmptyList_OrderList()
-    {
-      // Arrange
-      List<Order> newList = new List<Order> { };
 
-      // Act
-      List<Order> result = Order.GetAll();
 
-      // Assert
-      CollectionAssert.AreEqual(newList, result);
-    }
 
-    [TestMethod]
-    public void GetAll_ReturnsOrders_OrderList()
-    {
-      //Arrange
-      string description01 = "Walk the dog";
-      string description02 = "Wash the dishes";
-      Order newOrder1 = new Order(description01);
-      Order newOrder2 = new Order(description02);
-      List<Order> newList = new List<Order> { newOrder1, newOrder2 };
+    // [TestMethod]
+    // public void SetDescription_SetDescription_String()
+    // {
+    //   //Arrange
+    //   string description = "Walk the dog.";
+    //   Order newOrder = new Order(description);
 
-      //Act
-      List<Order> result = Order.GetAll();
+    //   //Act
+    //   string updatedDescription = "Do the dishes";
+    //   newOrder.Description = updatedDescription;
+    //   string result = newOrder.Description;
 
-      //Assert
-      CollectionAssert.AreEqual(newList, result);
-    }
+    //   //Assert
+    //   Assert.AreEqual(updatedDescription, result);
+    // }
+
+    // [TestMethod]
+    // public void GetAll_ReturnsEmptyList_OrderList()
+    // {
+    //   // Arrange
+    //   List<Order> newList = new List<Order> { };
+
+    //   // Act
+    //   List<Order> result = Order.GetAll();
+
+    //   // Assert
+    //   CollectionAssert.AreEqual(newList, result);
+    // }
+
+    // [TestMethod]
+    // public void GetAll_ReturnsOrders_OrderList()
+    // {
+    //   //Arrange
+    //   string description01 = "Walk the dog";
+    //   string description02 = "Wash the dishes";
+    //   Order newOrder1 = new Order(description01);
+    //   Order newOrder2 = new Order(description02);
+    //   List<Order> newList = new List<Order> { newOrder1, newOrder2 };
+
+    //   //Act
+    //   List<Order> result = Order.GetAll();
+
+    //   //Assert
+    //   CollectionAssert.AreEqual(newList, result);
+    // }
   }
 }
