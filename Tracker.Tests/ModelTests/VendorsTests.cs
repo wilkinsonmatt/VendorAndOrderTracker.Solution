@@ -26,8 +26,8 @@ namespace Tacker.Tests
     {
       //Arrange
       string name = "Test name";
-      string Description = "Test Description";
-      Vendor newVendor = new Vendor(name, Description);
+      string description = "Test Description";
+      Vendor newVendor = new Vendor(name, description);
 
       //Act
       string result = newVendor.Name;
@@ -37,18 +37,18 @@ namespace Tacker.Tests
     }
 
     [TestMethod]
-    public void GetName_ReturnsName_String()
+    public void GetDescription_ReturnsDescription_String()
     {
       //Arrange
       string name = "Test name";
-      string Description = "Test Description";
-      Vendor newVendor = new Vendor(name, Description);
+      string description = "Test Description";
+      Vendor newVendor = new Vendor(name, description);
 
       //Act
-      string result = newVendor.Name;
+      string result = newVendor.Description;
 
       //Assert
-      Assert.AreEqual(name, result);
+      Assert.AreEqual(description, result);
     }
 
     // [TestMethod]
