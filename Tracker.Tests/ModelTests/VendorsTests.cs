@@ -1,104 +1,120 @@
-// using Microsoft.VisualStudio.TestTools.UnitTesting;
-// using Tracker.Models;
-// using System.Collections.Generic;
-// using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Tracker.Models;
+using System.Collections.Generic;
+using System;
 
-// namespace Tacker.Tests
-// {
-//   [TestClass]
-//   public class VendorTests : IDisposable
-//   {
+namespace Tacker.Tests
+{
+  [TestClass]
+  public class VendorTests : IDisposable
+  {
 
-//     public void Dispose()
-//     {
-//       Vendor.ClearAll();
-//     }
+    public void Dispose()
+    {
+      Vendor.ClearAll();
+    }
 
-//     [TestMethod]
-//     public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
-//     {
-//       Vendor newVendor = new Vendor("test vendor", "test vendorDescription");
-//       Assert.AreEqual(typeof(Vendor), newVendor.GetType());
-//     }
+    [TestMethod]
+    public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
+    {
+      Vendor newVendor = new Vendor("test vendor", "test vendorDescription");
+      Assert.AreEqual(typeof(Vendor), newVendor.GetType());
+    }
 
-//     [TestMethod]
-//     public void GetName_ReturnsName_String()
-//     {
-//       //Arrange
-//       string name = "Test Vendor";
-//       Vendor newVendor = new Vendor(name);
+    [TestMethod]
+    public void GetName_ReturnsName_String()
+    {
+      //Arrange
+      string name = "Test name";
+      string Description = "Test Description";
+      Vendor newVendor = new Vendor(name, Description);
 
-//       //Act
-//       string result = newVendor.Name;
+      //Act
+      string result = newVendor.Name;
 
-//       //Assert
-//       Assert.AreEqual(name, result);
-//     }
+      //Assert
+      Assert.AreEqual(name, result);
+    }
 
-//     [TestMethod]
-//     public void GetId_ReturnsVendorId_Int()
-//     {
-//       //Arrange
-//       string name = "Test Vendor";
-//       Vendor newVendor = new Vendor(name);
+    [TestMethod]
+    public void GetName_ReturnsName_String()
+    {
+      //Arrange
+      string name = "Test name";
+      string Description = "Test Description";
+      Vendor newVendor = new Vendor(name, Description);
 
-//       //Act
-//       int result = newVendor.Id;
+      //Act
+      string result = newVendor.Name;
 
-//       //Assert
-//       Assert.AreEqual(1, result);
-//     }
+      //Assert
+      Assert.AreEqual(name, result);
+    }
 
-//     [TestMethod]
-//     public void GetAll_ReturnsAllVendorObjects_VendorList()
-//     {
-//       //Arrange
-//       string name01 = "Work";
-//       string name02 = "School";
-//       Vendor newVendor1 = new Vendor(name01);
-//       Vendor newVendor2 = new Vendor(name02);
-//       List<Vendor> newList = new List<Vendor> { newVendor1, newVendor2 };
+    // [TestMethod]
+    // public void GetId_ReturnsVendorId_Int()
+    // {
+    //   //Arrange
+    //   string name = "Test Vendor";
+    //   Vendor newVendor = new Vendor(name);
 
-//       //Act
-//       List<Vendor> result = Vendor.GetAll();
+    //   //Act
+    //   int result = newVendor.Id;
 
-//       //Assert
-//       CollectionAssert.AreEqual(newList, result);
-//     }
+    //   //Assert
+    //   Assert.AreEqual(1, result);
+    // }
 
-//     [TestMethod]
-//     public void Find_ReturnsCorrectVendor_Vendor()
-//     {
-//       //Arrange
-//       string name01 = "Work";
-//       string name02 = "School";
-//       Vendor newVendor1 = new Vendor(name01);
-//       Vendor newVendor2 = new Vendor(name02);
+    // [TestMethod]
+    // public void GetAll_ReturnsAllVendorObjects_VendorList()
+    // {
+    //   //Arrange
+    //   string name01 = "Work";
+    //   string name02 = "School";
+    //   Vendor newVendor1 = new Vendor(name01);
+    //   Vendor newVendor2 = new Vendor(name02);
+    //   List<Vendor> newList = new List<Vendor> { newVendor1, newVendor2 };
 
-//       //Act
-//       Vendor result = Vendor.Find(2);
+    //   //Act
+    //   List<Vendor> result = Vendor.GetAll();
 
-//       //Assert
-//       Assert.AreEqual(newVendor2, result);
-//     }
+    //   //Assert
+    //   CollectionAssert.AreEqual(newList, result);
+    // }
 
-//     [TestMethod]
-//     public void AddOrder_AssociatesItemWithVendor_ItemList()
-//     {
-//       //Arrange
-//       string description = "Walk the dog.";
-//       Order newOrder = new Order(description);
-//       List<Order> newList = new List<Order> { newOrder };
-//       string name = "Work";
-//       Vendor newVendor = new Vendor(name);
-//       newVendor.AddOrder(newOrder);
+    // [TestMethod]
+    // public void Find_ReturnsCorrectVendor_Vendor()
+    // {
+    //   //Arrange
+    //   string name01 = "Work";
+    //   string name02 = "School";
+    //   Vendor newVendor1 = new Vendor(name01);
+    //   Vendor newVendor2 = new Vendor(name02);
 
-//       //Act
-//       List<Order> result = newVendor.Orders;
+    //   //Act
+    //   Vendor result = Vendor.Find(2);
 
-//       //Assert
-//       CollectionAssert.AreEqual(newList, result);
-//     }
+    //   //Assert
+    //   Assert.AreEqual(newVendor2, result);
+    // }
+
+    // [TestMethod]
+    // public void AddOrder_AssociatesItemWithVendor_ItemList()
+    // {
+    //   //Arrange
+    //   string description = "Walk the dog.";
+    //   Order newOrder = new Order(description);
+    //   List<Order> newList = new List<Order> { newOrder };
+    //   string name = "Work";
+    //   Vendor newVendor = new Vendor(name);
+    //   newVendor.AddOrder(newOrder);
+
+    //   //Act
+    //   List<Order> result = newVendor.Orders;
+
+    //   //Assert
+    //   CollectionAssert.AreEqual(newList, result);
+    // }
     
-//   }
-// }
+  }
+}
